@@ -1,5 +1,6 @@
 import "../App.css";
 import '../assets/functions'
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
 
@@ -12,7 +13,7 @@ const Welcome = () => {
                 <h3>Good Luck!</h3>
             </div>
             <div className="button-container">
-                <Link to="/anime-characters"><button className="button">Anime Characters</button></Link> - done
+                <Link href="/anime-characters"><button className="button">Anime Characters</button></Link> - done
                 <a href="/anime-shows"><button className="button">Anime Shows</button></a> - done
                 <a href="/footballers"><button className="button">Footballers</button></a> - done
                 <a href="/adult-animation-characters"><button className="button">Adult Animation Characters</button></a> - done
