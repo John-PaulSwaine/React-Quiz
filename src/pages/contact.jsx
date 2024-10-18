@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 
 const Contact = () => {
 

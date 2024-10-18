@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import AccelImage from '../assets/Images/anime-shows/Accel-World.jpg'
 import AngelImage from '../assets/Images/anime-shows/Angel-Beats.jpg'
 import AnotherWorldImage from '../assets/Images/anime-shows/another-world.jpg'

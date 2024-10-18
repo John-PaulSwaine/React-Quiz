@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import KiritoImage from '../assets/Images/anime-characters/Kirito.jpg'
 import AsunaImage from '../assets/Images/anime-characters/Asuna.jpg'
 import ApdnargImage from '../assets/Images/anime-characters/ApdnargOtum.webp'

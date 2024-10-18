@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import BonesImage from '../assets/Images/live-action-shows/Bones.jpg'
 import CriminalMindsImage from '../assets/Images/live-action-shows/CriminalMinds.jpg'
 import DarkSkiesImage from '../assets/Images/live-action-shows/DarkSkies.jpg'

@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import CartmanImage from '../assets/Images/adult-animation-characters/cartman.jpg'
 import CyrilImage from '../assets/Images/adult-animation-characters/cyril.jpg'
 import MortyImage from '../assets/Images/adult-animation-characters/evil-morty.webp'

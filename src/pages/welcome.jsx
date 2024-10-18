@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import { Link } from "react-router-dom";
 
 const Welcome = () => {

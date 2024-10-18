@@ -1,5 +1,5 @@
 import "../App.css";
-import '../assets/functions'
+import '../assets/functions/functions'
 import ballImage from '../assets/Images/footballers/ball.jpg'
 import chiesaImage from '../assets/Images/footballers/chiesa.jpg'
 import etoImage from '../assets/Images/footballers/etoo.jpg'
