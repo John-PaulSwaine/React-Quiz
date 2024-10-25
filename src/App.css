@@ -50,6 +50,22 @@ button {
     align-items: center;
 }
 
+.correct-button-clicked {
+    color: green;
+}
+
+.incorrect-button-clicked {
+    color: red;
+}
+
+.info-correct {
+    color: aqua;
+}
+
+.info-incorrect {
+    color: black;
+}
+
 .navBar {
     background-color: aqua;
     max-height: 25px;
