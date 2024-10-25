@@ -108,7 +108,7 @@ const AnimeCharacters = () => {
                     <button className={`incorrect ${isIncorrectClicked.heathcliff ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('heathcliff')} disabled={disabled.heathcliff}>Asuna</button>
                     <button className={`incorrect ${isIncorrectClicked.heathcliff ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('heathcliff')} disabled={disabled.heathcliff}>Klein</button>
                 </div>
-                <p className={`info ${infoClass.heathcliff}`} style={{ display: isCorrectClick.heathcliff || isIncorrectClicked.heathcliff ? 'block' : 'none' }}>Heathcliff is a character from Sword Art Online, known for his mysterious persona and powerful skills.</p>
+                <p className={`info ${infoClass.heathcliff}`} style={{ display: isCorrectClick.heathcliff || isIncorrectClicked.heathcliff ? 'block' : 'none' }}>Heathcliff, a pivotal character in Sword Art Online, is the enigmatic and formidable commander of the Knights of the Blood Oath, concealing his true identity as the game's creator, Akihiko Kayaba, while skillfully navigating the complexities of the virtual world.</p>
             </div>
             <div className="questions">
                 <img src={MeguminImage} alt="Megumin" />
