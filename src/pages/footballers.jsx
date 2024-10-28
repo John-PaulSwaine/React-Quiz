@@ -6,7 +6,7 @@ import fashanuImage from '../assets/Images/footballers/fashanu.webp'
 import gomesImage from '../assets/Images/footballers/gomes.webp'
 import koemanImage from '../assets/Images/footballers/koeman.jpg'
 import moyesImage from '../assets/Images/footballers/moyes.webp'
-import philogeneImage from '../assets/Images/footballers/philogene.jpg'
+import dixieImage from '../assets/Images/footballers/Dixie.jpg'
 import simmsImage from '../assets/Images/footballers/simms.jpg'
 import yamalImage from '../assets/Images/footballers/yamal.webp'
 import { handleCorrect, handleIncorrect } from '../assets/functions/functions'; // Importing functions
@@ -101,14 +101,14 @@ const Footballers = () => {
                 <p className={`info ${infoClass.moyes}`} style={{ display: isCorrectClick.moyes || isIncorrectClicked.moyes ? 'block' : 'none' }}>David Moyes is a Scottish football manager and former player known for his long-term tenure at Everton and more recently leading West Ham United to European success, with a reputation for his tactical discipline and ability to maximize team potential on a budget.</p>
             </div>
             <div className="questions">
-                <img src={philogeneImage} alt="philogene" />
+                <img src={dixieImage} alt="dixie" />
                 <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
-                    <button className={`icorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Jacob Grieves</button>
-                    <button className={`incorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Jean Michael Seri</button>
-                    <button className={`incorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Xavier Simons</button>
-                    <button className={`correct ${isCorrectClick.philogene ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('philogene')} disabled={disabled.philogene}>Jaden Philogene</button>
+                    <button className={`icorrect ${isIncorrectClicked.dixie ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('dixie')} disabled={disabled.dixie}>Edward Taylor</button>
+                    <button className={`incorrect ${isIncorrectClicked.dixie ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('dixie')} disabled={disabled.dixie}>Ted Critchley</button>
+                    <button className={`incorrect ${isIncorrectClicked.dixie ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('dixie')} disabled={disabled.dixie}>Bobby Irvine</button>
+                    <button className={`correct ${isCorrectClick.dixie ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('dixie')} disabled={disabled.dixie}>Dixie Dean</button>
                 </div>
-                <p className={`info ${infoClass.philogene}`} style={{ display: isCorrectClick.philogene || isIncorrectClicked.philogene ? 'block' : 'none' }}>Jaden Philogene is an English winger currently playing for Aston Villa in the Premier League, known for his pace, agility, and creativity on the field, and has represented England at the under-21 level.</p>
+                <p className={`info ${infoClass.dixie}`} style={{ display: isCorrectClick.dixie || isIncorrectClicked.dixie ? 'block' : 'none' }}>William Ralph 'Dixie' Dean, was an iconic English footballer celebrated for his prolific goal-scoring ability and remarkable tenure at Everton, where he scored a record 383 goals in 433 appearances and is regarded as one of the greatest forwards in football history. He also still holds the record for the most league goals in a single league season with 60, which he scored in the 1927/28 season for Everton. For illustrative purposes Lionel Messi only ever achieved a maximum of 50 league goals in a single season at FC Barcelona during the 2011/12 La Liga season which is currently the record tally in a La Liga season.</p>
             </div>
             <div className="questions">
                 <img src={simmsImage} alt="simms" />
