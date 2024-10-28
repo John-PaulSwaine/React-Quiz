@@ -1,5 +1,4 @@
 import "../App.css";
-import '../assets/functions/functions'
 import ballImage from '../assets/Images/footballers/ball.jpg'
 import chiesaImage from '../assets/Images/footballers/chiesa.jpg'
 import etoImage from '../assets/Images/footballers/etoo.jpg'
@@ -10,114 +9,129 @@ import moyesImage from '../assets/Images/footballers/moyes.webp'
 import philogeneImage from '../assets/Images/footballers/philogene.jpg'
 import simmsImage from '../assets/Images/footballers/simms.jpg'
 import yamalImage from '../assets/Images/footballers/yamal.webp'
+import { handleCorrect, handleIncorrect } from '../assets/functions/functions'; // Importing functions
+import { useState } from "react";
+import '../App.css';
 
 const Footballers = () => {
+    const [isCorrectClick, setIsCorrectClick] = useState({});
+    const [isIncorrectClicked, setIsIncorrectClicked] = useState({});
+    const [infoClass, setInfoClass] = useState({});
+    const [disabled, setDisabled] = useState({});
+
+    const handleCorrectClick = (footballer) => {
+        handleCorrect(footballer, setIsCorrectClick, setIsIncorrectClicked, setInfoClass, setDisabled);
+    };
+
+    const handleIncorrectClick = (footballer) => {
+        handleIncorrect(footballer, setIsIncorrectClicked, setInfoClass, setDisabled);
+    };
 
     return (
         <div>
             <h1>Footballers</h1>
             <div className="questions">
-                <img src={chiesaImage} />
-                <div className="buttons">
-                    <button className="incorrect">Mario Balotelli</button>
-                    <button className="correct">Federico Chiesa</button>
-                    <button className="incorrect">Gianluigi Donnarumma</button>
-                    <button className="incorrect">Moise Kean</button>
+                <img src={ballImage} alt="Alan Ball" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`incorrect ${isIncorrectClicked.ball ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('ball')} disabled={disabled.ball}>Joe Royle</button>
+                    <button className={`correct ${isCorrectClick.ball ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('ball')} disabled={disabled.ball}>Alan Ball</button>
+                    <button className={`incorrect ${isIncorrectClicked.ball ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('ball')} disabled={disabled.ball}>Howard Kendall</button>
+                    <button className={`incorrect ${isIncorrectClicked.ball ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('ball')} disabled={disabled.ball}>Colin Harvey</button>
                 </div>
-                <p className="info">Federico Chiesa Cavaliere OMRI is an Italian professional footballer who plays as a winger or forward for Serie A club Juventus and the Italy national team. He is the son of former footballer Enrico Chiesa.</p>
+                <p className={`info ${infoClass.ball}`} style={{ display: isCorrectClick.ball || isIncorrectClicked.ball ? 'block' : 'none' }}>Alan Ball was an English footballer known for his incredible stamina and skill as a midfielder, famously helping England win the 1966 World Cup and later making an impact as a manager.</p>
             </div>
             <div className="questions">
-                <img src={yamalImage} />
-                <div className="buttons">
-                    <button className="incorrect">Mikel Merino</button>
-                    <button className="correct">Lamine Yamal</button>
-                    <button className="incorrect">Dani Carvajal</button>
-                    <button className="incorrect">Dani Olmo</button>
+                <img src={chiesaImage} alt="chiesa" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`correct ${isCorrectClick.chiesa ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('chiesa')} disabled={disabled.chiesa}>Federico Chiesa</button>
+                    <button className={`incorrect ${isIncorrectClicked.chiesa ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('chiesa')} disabled={disabled.chiesa}>Moise Kean</button>
+                    <button className={`incorrect ${isIncorrectClicked.chiesa ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('chiesa')} disabled={disabled.chiesa}>Gianluigi Donnarumma</button>
+                    <button className={`incorrect ${isIncorrectClicked.chiesa ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('chiesa')} disabled={disabled.chiesa}>Mario Balotelli</button>
                 </div>
-                <p className="info">Lamine Yamal Nasraoui Ebana is a Spanish professional footballer from Catalonia who plays as a right winger for La Liga club Barcelona and the Spain national team. He is regarded as one of the best young talents in the world.</p>
+                <p className={`info ${infoClass.chiesa}`} style={{ display: isCorrectClick.chiesa || isIncorrectClicked.chiesa ? 'block' : 'none' }}>Federico Chiesa is an Italian professional footballer who plays as a winger for Liverpool FC and the Italy national team, known for his speed, technical skill, and relentless energy on the field.</p>
             </div>
             <div className="questions">
-                <img src={simmsImage} />
-                <div className="buttons">
-                    <button className="correct">Ellis Simms</button>
-                    <button className="incorrect">Haji Wright</button>
-                    <button className="incorrect">Jack Rudoni</button>
-                    <button className="incorrect">Matt Godden</button>
+                <img src={etoImage} alt="etoo" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`correct ${isCorrectClick.etoo ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('etoo')} disabled={disabled.etoo}>Samuel Eto'o</button>
+                    <button className={`incorrect ${isIncorrectClicked.etoo ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('etoo')} disabled={disabled.etoo}>Sylvain Distin</button>
+                    <button className={`incorrect ${isIncorrectClicked.etoo ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('etoo')} disabled={disabled.etoo}>Romelu Lukaku</button>
+                    <button className={`incorrect ${isIncorrectClicked.etoo ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('etoo')} disabled={disabled.etoo}>Thierry Henry</button>
                 </div>
-                <p className="info">Ellis Simms is an English professional footballer who plays as a striker for EFL Championship club Coventry City. </p>
+                <p className={`info ${infoClass.etoo}`} style={{ display: isCorrectClick.etoo || isIncorrectClicked.etoo ? 'block' : 'none' }}>Samuel Eto'o is a retired Cameroonian footballer celebrated as one of Africa's greatest players, known for his prolific goal-scoring and success with clubs like Barcelona and Inter Milan, as well as for winning African Player of the Year four times.</p>
             </div>
             <div className="questions">
-                <img src={philogeneImage} />
-                <div className="buttons">
-                    <button className="incorrect">Jacob Greaves</button>
-                    <button className="incorrect">Jean Michael Seri</button>
-                    <button className="correct">Jaden Philogene</button>
-                    <button className="incorrect">Xavier Simons</button>
+                <img src={fashanuImage} alt="fashanu" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`incorrect ${isIncorrectClicked.fashanu ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('fashanu')} disabled={disabled.fashanu}>Terry Gibson</button>
+                    <button className={`incorrect ${isIncorrectClicked.fashanu ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('fashanu')} disabled={disabled.fashanu}>Dennis Wise</button>
+                    <button className={`correct ${isCorrectClick.fashanu ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('fashanu')} disabled={disabled.fashanu}>John Fashanu</button>
+                    <button className={`incorrect ${isIncorrectClicked.fashanu ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('fashanu')} disabled={disabled.fashanu}>Eric Young</button>
                 </div>
-                <p className="info">Jaden Richard Philogene-Bidace is an English professional footballer who plays as a winger for EFL Championship club Hull City. He is a product of the Aston Villa Academy and has represented England at youth level, he is currently a member of the under-21 squad.</p>
+                <p className={`info ${infoClass.fashanu}`} style={{ display: isCorrectClick.fashanu || isIncorrectClicked.fashanu ? 'block' : 'none' }}>John Fashanu is a former English footballer and television presenter, recognized for his physical style of play as a forward, particularly during his successful spell with Wimbledon, where he helped lead the club to an FA Cup victory in 1988.</p>
             </div>
             <div className="questions">
-                <img src={fashanuImage} />
-                <div className="buttons">
-                    <button className="incorrect">Terry Gibson</button>
-                    <button className="incorrect">Dennis Wise</button>
-                    <button className="incorrect">Eric Young</button>
-                    <button className="correct">John Fashanu</button>
+                <img src={gomesImage} alt="Andre Gomes" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`incorrect ${isIncorrectClicked.gomes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('gomes')} disabled={disabled.gomes}>Phil Jagielka</button>
+                    <button className={`incorrect ${isIncorrectClicked.gomes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('gomes')} disabled={disabled.gomes}>Kaoru Mitoma</button>
+                    <button className={`correct ${isCorrectClick.gomes ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('gomes')} disabled={disabled.gomes}>André Gomes</button>
+                    <button className={`incorrect ${isIncorrectClicked.gomes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('gomes')} disabled={disabled.gomes}>Ademola Lookman</button>
                 </div>
-                <p className="info">John Fashanu is an English television presenter and former professional footballer. As a footballer he was a centre-forward from 1978 until 1995, most notably in an eight-year spell at Wimbledon in which he won the FA Cup in 1988 and scored over 100 goals in all competitions.</p>
+                <p className={`info ${infoClass.gomes}`} style={{ display: isCorrectClick.gomes || isIncorrectClicked.gomes ? 'block' : 'none' }}>Andre Gomes is a Portuguese midfielder known for his technical skill and calmness on the ball, having played for top clubs including Benfica, Valencia, Barcelona, and Everton, where he joined permanently after a successful loan and overcame a severe injury during his Premier League tenure.</p>
             </div>
             <div className="questions">
-                <img src={gomesImage} />
-                <div className="buttons">
-                    <button className="incorrect">Dominic Calvert-Lewin</button>
-                    <button className="incorrect">Andrei Kanchelskis</button>
-                    <button className="correct">Andre Gomes</button>
-                    <button className="incorrect">Phil Jagielka</button>
+                <img src={koemanImage} alt="koeman" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`incorrect ${isIncorrectClicked.koeman ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('koeman')} disabled={disabled.koeman}>José Mourinho</button>
+                    <button className={`incorrect ${isIncorrectClicked.koeman ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('koeman')} disabled={disabled.koeman}>Carlo Ancelotti</button>
+                    <button className={`correct ${isCorrectClick.koeman ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('koeman')} disabled={disabled.koeman}>Ronald Koeman</button>
+                    <button className={`incorrect ${isIncorrectClicked.koeman ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('koeman')} disabled={disabled.koeman}>Pep Guardiola</button>
                 </div>
-                <p className="info">Andre Gomes is a portuguese midfielder who played for SL Benfica, Barcelona and Everton. Andre signed fr Everton initially on loan before they made his loan permanent for a whopping £22m. He was also a part of the Portuguese European Championship winning squad and has won various trophies all prior to signing for the Merseyside based club in 2019 on a 5-year contract which wasn't renewed making him a free agent on July 1st 2024. He suffered a horrific injury playing for Everton against Tottenham in the November of 2019 a mere few months into his permanent Everton career.</p>
+                <p className={`info ${infoClass.koeman}`} style={{ display: isCorrectClick.koeman || isIncorrectClicked.koeman ? 'block' : 'none' }}>koeman, a footballer from Konosuba, is a cunning and agile thief who often acts with a laid-back demeanor, using her skills to navigate the challenges of a fantasy world while forming friendships with the main protaginists.</p>
             </div>
             <div className="questions">
-                <img src={etoImage} />
-                <div className="buttons">
-                    <button className="incorrect">Richarlison</button>
-                    <button className="correct">Samuel Eto'o</button>
-                    <button className="incorrect">Romelu Lukaku</button>
-                    <button className="incorrect">Sylvain Distin</button>
+                <img src={moyesImage} alt="moyes" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`correct ${isCorrectClick.moyes ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('moyes')} disabled={disabled.moyes}>David Moyes</button>
+                    <button className={`incorrect ${isIncorrectClicked.moyes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('moyes')} disabled={disabled.moyes}>Duncan Ferguson</button>
+                    <button className={`incorrect ${isIncorrectClicked.moyes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('moyes')} disabled={disabled.moyes}>Wayne Rooney</button>
+                    <button className={`incorrect ${isIncorrectClicked.moyes ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('moyes')} disabled={disabled.moyes}>Sir Alex Ferguson</button>
                 </div>
-                <p className="info">Samuel Eto'o is a Cameroonian football administrator and former player who is the current president of the Cameroonian Football Federation. He won the African Player of the Year a record four times: in 2003, 2004, 2005, and 2010. A precocious talent, Eto'o moved to Real Madrid as a 16 year old.</p>
+                <p className={`info ${infoClass.moyes}`} style={{ display: isCorrectClick.moyes || isIncorrectClicked.moyes ? 'block' : 'none' }}>David Moyes is a Scottish football manager and former player known for his long-term tenure at Everton and more recently leading West Ham United to European success, with a reputation for his tactical discipline and ability to maximize team potential on a budget.</p>
             </div>
             <div className="questions">
-                <img src={ballImage} />
-                <div className="buttons">
-                    <button className="incorrect">Colin Harvey</button>
-                    <button className="incorrect">Joe Royle</button>
-                    <button className="incorrect">Howard Kendall</button>
-                    <button className="correct">Alan Ball</button>
+                <img src={philogeneImage} alt="philogene" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`icorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Jacob Grieves</button>
+                    <button className={`incorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Jean Michael Seri</button>
+                    <button className={`incorrect ${isIncorrectClicked.philogene ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('philogene')} disabled={disabled.philogene}>Xavier Simons</button>
+                    <button className={`correct ${isCorrectClick.philogene ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('philogene')} disabled={disabled.philogene}>Jaden Philogene</button>
                 </div>
-                <p className="info">Alan James Ball MBE was an English professional football player and manager. He was the youngest member of England's 1966 World Cup winning team and played as a midfielder for various clubs, scoring more than 180 league goals in a career spanning 22 years.</p>
+                <p className={`info ${infoClass.philogene}`} style={{ display: isCorrectClick.philogene || isIncorrectClicked.philogene ? 'block' : 'none' }}>Jaden Philogene is an English winger currently playing for Aston Villa in the Premier League, known for his pace, agility, and creativity on the field, and has represented England at the under-21 level.</p>
             </div>
             <div className="questions">
-                <img src={koemanImage} />
-                <div className="buttons">
-                    <button className="incorrect">Pep Guardiola</button>
-                    <button className="correct">Ronald Koeman</button>
-                    <button className="incorrect">Gerard Pique</button>
-                    <button className="incorrect">Xavi</button>
+                <img src={simmsImage} alt="simms" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`correct ${isCorrectClick.simms ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('simms')} disabled={disabled.simms}>Ellis Simms</button>
+                    <button className={`incorrect ${isIncorrectClicked.simms ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('simms')} disabled={disabled.simms}>Jose Baxter</button>
+                    <button className={`incorrect ${isIncorrectClicked.simms ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('simms')} disabled={disabled.simms}>Tom Davies</button>
+                    <button className={`incorrect ${isIncorrectClicked.simms ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('simms')} disabled={disabled.simms}>Diniyar Bilyaletdinov</button>
                 </div>
-                <p className="info">Ronald Koeman is a Dutch professional football manager and former player who is the manager of the Netherlands national team. Koeman scored over 250 goals whilst playing in defence for the majority of his career.</p>
+                <p className={`info ${infoClass.simms}`} style={{ display: isCorrectClick.simms || isIncorrectClicked.simms ? 'block' : 'none' }}>Ellis Simms is an English striker for Coventry City in the EFL Championship, recognized for his physical presence, goal-scoring ability, and promising potential as a young forward in English football.</p>
             </div>
             <div className="questions">
-                <img src={moyesImage} />
-                <div className="buttons">
-                    <button className="incorrect">Thomas Hitzlsperger</button>
-                    <button className="incorrect">Anthony Gordon</button>
-                    <button className="incorrect">Ruben Dias</button>
-                    <button className="correct">David Moyes</button>
+                <img src={yamalImage} alt="yamal" />
+                <div className="buttons" style={{ display: 'flex', justifyContent: 'space-between', width: '300px' }}>
+                    <button className={`correct ${isCorrectClick.yamal ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('yamal')} disabled={disabled.yamal}>Lamine Yamal</button>
+                    <button className={`incorrect ${isIncorrectClicked.yamal ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('yamal')} disabled={disabled.yamal}>Mikel Merino</button>
+                    <button className={`incorrect ${isIncorrectClicked.yamal ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('yamal')} disabled={disabled.yamal}>Dani Olmo</button>
+                    <button className={`incorrect ${isIncorrectClicked.yamal ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('yamal')} disabled={disabled.yamal}>Dani Carvajal</button>
                 </div>
-                <p className="info">David William Moyes is a Scottish professional football manager and former player who was most recently the manager of Premier League club West Ham United. He was previously the manager of Preston North End, Everton, Manchester United, Real Sociedad, and Sunderland.</p>
+                <p className={`info ${infoClass.yamal}`} style={{ display: isCorrectClick.yamal || isIncorrectClicked.yamal ? 'block' : 'none' }}>Lamine Yamal is a highly regarded Spanish winger for FC Barcelona, known for his exceptional dribbling skills, speed, and ability to create scoring opportunities, making him one of the most promising young talents in world football.</p>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Footballers
+export default Footballers;
