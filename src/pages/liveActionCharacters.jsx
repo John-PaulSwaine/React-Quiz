@@ -113,7 +113,7 @@ const liveActionCharacters = () => {
                     <button className={`incorrect ${isIncorrectClicked.PontiacBandit ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('PontiacBandit')} disabled={disabled.PontiacBandit}>Jake Peralta</button>
                     <button className={`correct ${isCorrectClick.PontiacBandit ? 'correct-button-clicked' : ''}`} onClick={() => handleCorrectClick('PontiacBandit')} disabled={disabled.PontiacBandit}>Pontiac Bandit</button>
                     <button className={`incorrect ${isIncorrectClicked.PontiacBandit ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('PontiacBandit')} disabled={disabled.PontiacBandit}>Terry Jeffords</button>
-                    <button className={`incorrect ${isIncorrectClicked.PontiacBandit ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('PontiacBandit')} disabled={disabled.PontiacBandit}>Rosa Diaz</button>
+                    <button className={`incorrect ${isIncorrectClicked.PontiacBandit ? 'incorrect-button-clicked' : ''}`} onClick={() => handleIncorrectClick('PontiacBandit')} disabled={disabled.PontiacBandit}>Raymond Holt</button>
                 </div>
                 <p className={`info ${infoClass.PontiacBandit}`} style={{ display: isCorrectClick.PontiacBandit || isIncorrectClicked.PontiacBandit ? 'block' : 'none' }}>Pontiac Bandit is a recurring character from *Brooklyn Nine-Nine*, a hilarious and lovable figure who is involved in car thefts and other schemes.</p>
             </div>
