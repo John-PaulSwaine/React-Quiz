@@ -11,7 +11,6 @@ import MeguminImage from '../assets/Images/anime-characters/Megumin.jpg';
 import MokubaImage from '../assets/Images/anime-characters/Mokuba.webp';
 import { handleCorrect, handleIncorrect } from '../assets/functions/functions'; // Importing functions
 import { useState } from "react";
-import '../App.css';
 
 const AnimeCharacters = () => {
     const [isCorrectClick, setIsCorrectClick] = useState({});
