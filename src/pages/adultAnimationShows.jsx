@@ -3,7 +3,7 @@ import "../App.css";
 import { handleCorrect, handleIncorrect } from '../assets/functions/functions'; // Importing functions
 import AD from '../assets/Images/adult-animation-shows/AmericanDad.jpg'
 import BAB from '../assets/Images/adult-animation-shows/BeavisButthead.jpg'
-import BB from '../assets/Images/adult-animation-shows/BoBsBurgers.jpg'
+import BB from '../assets/Images/adult-animation-shows/BobsBurgers.jpg'
 import BH from '../assets/Images/adult-animation-shows/BoJackHorseman.jpg'
 import Br from '../assets/Images/adult-animation-shows/Brickleberry.jpg'
 import FG from '../assets/Images/adult-animation-shows/FamilyGuy.jpg'
