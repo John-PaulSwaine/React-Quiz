@@ -20,11 +20,13 @@ const Welcome = () => {
                 <br />
                 <a href="/adult-animation-characters"><button className="button">Adult Animation Characters</button></a>
                 <br />
-                <a href="/adult-animation-shows"><button>Adult Animation Shows</button></a> - to do
+                <a href="/adult-animation-shows"><button>Adult Animation Shows</button></a>
                 <br />
                 <a href="/live-action-shows"><button className="button">Live Action TV Shows</button></a>
                 <br />
-                <a href="/live-action-characters"><button className="button">Live Action TV Characters</button></a> - to do
+                <a href="/live-action-characters"><button className="button">Live Action TV Characters</button></a>
+                <br />
+                {/* <a href="/historical-figures"><button className="button">Historical Figures</button></a> */}
             </div>
         </div>
     )

@@ -9,6 +9,7 @@ import AdultAnimationCharacters from './pages/adultAnimationCharacters'
 import AdultAnimationShows from './pages/adultAnimationShows'
 import LiveActionShows from "./pages/liveActionShows"
 import LiveActionCharacters from './pages/liveActionCharacters'
+import HistoricalFigures from './pages/historicalFigures'
 import About from './pages/about'
 import Contact from './pages/contact'
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/adult-animation-shows' element={<AdultAnimationShows />}></Route>
         <Route path='/live-action-shows' element={<LiveActionShows />}></Route>
         <Route path='/live-action-characters' element={<LiveActionCharacters />}></Route>
+        <Route path='/historical-figures' element={<HistoricalFigures />}></Route>
       </Routes>
     </div>
   )
