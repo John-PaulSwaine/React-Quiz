@@ -18,7 +18,7 @@ h1, h2, h3, p{
     color: aqua;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .questions {
@@ -41,6 +41,7 @@ p {
 
 button {
     background-color: white;
+    width: 200px;
 }
 
 .button-container {
