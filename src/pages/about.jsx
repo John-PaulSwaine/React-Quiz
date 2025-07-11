@@ -1,5 +1,4 @@
 import "../App.css";
-import '../assets/functions/functions'
 
 const About = () => {
 
